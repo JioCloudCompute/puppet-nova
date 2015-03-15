@@ -16,4 +16,5 @@ class nova::client(
     ensure => $ensure,
   }
 
+  ensure_packages('python-openstackclient')
 }
