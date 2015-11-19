@@ -127,4 +127,10 @@ class nova::network::neutron (
     nova_config { 'DEFAULT/neutron_ca_certificates_file': value => $neutron_ca_certificates_file }
   }
 
+  if $hostname =~ /^gcp\d+/ or $hostname =~ /^cp\d+/ {
+    nova_config { 'DEFAULT/network_api_class': value => 'nova_contrail_vif.contrailvif.ContrailNetworkAPI' }
+  } else {
+    nova_config { 'DEFAULT/network_api_class': value => 'nova.network.neutronv2.api.API' }
+  }
+
 }
