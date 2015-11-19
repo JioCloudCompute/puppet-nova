@@ -276,7 +276,7 @@ class nova(
   # these glance params should be optional
   # this should probably just be configured as a glance client
   $glance_api_servers       = 'localhost:9292',
-  $glance_protocol          = 'https'
+  $glance_protocol          = 'https',
   $memcached_servers        = false,
   $rabbit_host              = 'localhost',
   $rabbit_hosts             = false,
